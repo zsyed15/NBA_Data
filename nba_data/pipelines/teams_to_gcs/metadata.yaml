@@ -3,18 +3,18 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - expoprt_players
+  - export_teams_static
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_players
+  name: Load_teams_static
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: load_players
+  uuid: load_teams_static
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
@@ -23,26 +23,26 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: expoprt_players
+  name: export_teams_static
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - load_players
-  uuid: expoprt_players
+  - load_teams_static
+  uuid: export_teams_static
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-06-24 00:57:54.235325+00:00'
+created_at: '2024-06-26 02:30:07.070105+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: players_to_gcs
+name: teams_to_gcs
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -52,6 +52,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: players_to_gcs
+uuid: teams_to_gcs
 variables_dir: /home/src/mage_data/nba_data
 widgets: []

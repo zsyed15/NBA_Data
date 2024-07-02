@@ -1,7 +1,8 @@
 import io
 import pandas as pd
 import requests
-from nba_api.stats.static import players
+from nba_api.stats.static import teams
+
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
@@ -13,16 +14,11 @@ def load_data_from_api(*args, **kwargs):
     """
    Load Players from NBA Players API 
     """
-   
-    p = players.get_players()
-    df = pd.DataFrame(p)
+    t = teams.get_teams()
+    df = pd.DataFrame(t)
     return df
 
 
 @test
 def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
-   # print(output)
-    assert output is not None, 'The output is undefined'
+    assert output is not None

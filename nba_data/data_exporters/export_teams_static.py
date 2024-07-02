@@ -20,7 +20,8 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
     config_profile = 'default'
 
     bucket_name = 'zafeer-nba-bucket'
-    object_key = 'nba_player_names.parquet'
+    folder_name = 'static'
+    object_key = f'{folder_name}/nba_team_names.parquet'
 
     GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).export(
         df,

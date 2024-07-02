@@ -15,18 +15,8 @@ root_path = f'{bucket_name}/{table_name}'
 @data_exporter
 def export_data(data, *args, **kwargs):
     """
-    Exports data to some source.
-
-    Args:
-        data: The output from the upstream parent block
-        args: The output from any additional upstream blocks (if applicable)
-
-    Output (optional):
-        Optionally return any object and it'll be logged and
-        displayed when inspecting the block run.
+    Exports data to GCS
     """
-    #path to gcs credentials 
-    #TODO ADD ENV 
     table = pa.Table.from_pandas(data)
     gcs = pa.fs.GcsFileSystem()
     pq.write_to_dataset(
@@ -36,6 +26,5 @@ def export_data(data, *args, **kwargs):
             filesystem=gcs
         )
  
-    # Specify your data exporting logic here
 
 
