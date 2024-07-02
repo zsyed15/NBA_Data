@@ -59,7 +59,7 @@ blocks:
   language: python
   name: export_franchise_players_to_gcs_paritioned
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:

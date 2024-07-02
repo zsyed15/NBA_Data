@@ -1,0 +1,1 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "export_franchise_history_to_gcs"}, "timestamp": 1719890785, "user": null}

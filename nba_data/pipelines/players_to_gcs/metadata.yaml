@@ -25,7 +25,7 @@ blocks:
   language: python
   name: expoprt_players
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -53,5 +53,5 @@ spark_config: {}
 tags: []
 type: python
 uuid: players_to_gcs
-variables_dir: /home/src/mage_data/nba_data
+variables_dir: /root/.mage_data/nba_data
 widgets: []
