@@ -95,5 +95,5 @@ variables:
   proj_id: delta-cortex-327423
   table_name: franchises
   team_path: nba_team_names
-variables_dir: /home/src/mage_data/nba_data
+variables_dir: /root/.mage_data/nba_data
 widgets: []
