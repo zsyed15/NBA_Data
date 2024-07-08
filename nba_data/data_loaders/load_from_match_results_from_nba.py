@@ -1,10 +1,7 @@
 import io
 import pandas as pd
-from pyspark.sql import SparkSession
-from nba_api.stats.endpoints import boxscoretraditionalv2
 from nba_api.stats.endpoints import LeagueGameLog
 from nba_api.stats.endpoints import commonteamyears, teamyearbyyearstats
-
 pd.DataFrame.iteritems = pd.DataFrame.items
 
 if 'data_loader' not in globals():
@@ -46,27 +43,21 @@ def load_data_from_api(*args, **kwargs):
     """
     Loads data from nba api as collecion of spark dataframes
     """
-    spark = SparkSession.builder \
-    .appName("NBA Game IDs per Season") \
-    .getOrCreate()
-
-    #(box_score,matchup)
+    #(matchup_df,box_score_df)
     dfs = []
-    # seasons_list = get_all_seasons()
-    seasons_list = [['2022-23', '2023-24']]
-    i = 0
+    seasons_list = get_all_seasons()
     for season in seasons_list:
-        game_ids = game_ids_per_season(spark,season)
-        for game_id in game_ids:
-            i += 1
-            traditional_boxscore = boxscoretraditionalv2.BoxScoreTraditionalV2(game_id=game_id)
-            traditional_data = traditional_boxscore.get_data_frames()
-            
-            box_score =  spark.createDataFrame(traditional_data[0])
-            match_outcome = spark.createDataFrame(traditional_data[1])
+            game_ids = game_ids_per_season(spark,season)
+            for game_id in game_ids:
+                i += 1
+                traditional_boxscore = boxscoretraditionalv2.BoxScoreTraditionalV2(game_id=game_id)
+                traditional_data = traditional_boxscore.get_data_frames()
+                
+                box_score =  spark.createDataFrame(traditional_data[0])
+                match_outcome = spark.createDataFrame(traditional_data[1])
 
-            dfs.append((box_score.collect(),match_outcome.collect()))
-    return dfs
+                dfs.append((box_score.collect(),match_outcome.collect()))
+        return dfs
     #return pd.read_csv(io.StringIO(response.text), sep=',')
 
 

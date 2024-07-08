@@ -11,7 +11,7 @@ if 'data_exporter' not in globals():
 
 @data_exporter
 def export_data(data, *args, **kwargs):
-
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = kwargs['cred_path']
     bucket_name = kwargs['bucket_name']
     table_name = kwargs['table_name']
     root_path = f'{bucket_name}/{table_name}'
