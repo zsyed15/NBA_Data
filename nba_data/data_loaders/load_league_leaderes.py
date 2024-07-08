@@ -30,7 +30,7 @@ def load_data_from_api(*args, **kwargs):
     """
     Template for loading data from API
     """
-    seasons = get_all_seasons()[50:]
+    seasons = get_all_seasons()[40:]
     
     stat_categories = ['PTS', 'REB', 'AST', 'STL', 'BLK', 'FG_PCT', 'FG3_PCT', 'FT_PCT']
 
