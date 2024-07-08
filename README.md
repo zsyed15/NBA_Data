@@ -11,3 +11,5 @@ This project contains various ETL Pipelines (using Mage.AI) that process/clean v
 4. Update credentials and related global variables, like bucket name, project_id, etc. 
 
 #### NOTE : This was based off of my own GCP account and credentials, in order to use your own account you will need to add your key in the secrets folder, and update pipeline variables like bucket-name and project-id with your own information. 
+
+Below are some example images of analytical dashboards and graphs that I have been able to create using my Data warehouse : 
