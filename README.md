@@ -1,5 +1,4 @@
 # NBA-DATA
-This is a final project that I created as a part of Data Talks Club's Zoom Datacamp. If you'd like to read a bit more about my experience, please check out this blog post! https://medium.com/@zafeersyed15/data-engineering-e7c45a81f946.
 
 This project contains various ETL Pipelines (using Mage.AI) that process/clean various differnt types of NBA Data and upload them to GCS and Google Bigquery, where they can be used to conduct various in-depth analyses on NBA Data.
 
