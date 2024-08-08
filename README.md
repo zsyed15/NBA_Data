@@ -1,5 +1,5 @@
 # NBA-DATA
-Here is where you can find some more information about my processes in developing this project : https://medium.com/@zsyed15
+Here is where you can find some more detailed information about my processes in developing this project : https://medium.com/@zsyed15
 
 This project contains various ETL Pipelines (using Mage.AI) that process/clean various differnt types of NBA Data and upload them to GCS and Google Bigquery, where they can be used to conduct various in-depth analyses on NBA Data.
 
